@@ -19,7 +19,8 @@ header.site {
 }
 
 .menu-btn {
-display: none;
+ display: none;
+ margin-left: auto;
 }
 
 .logo {
@@ -170,70 +171,42 @@ nav a.active {
    Mobile Styles (max-width: 768px)
 ---------------------------- */
 @media screen and (max-width: 768px) {
-  body{
-padding:12px;
-}
-
-  header.site {
-    flex-wrap: wrap;
-    padding: 15px 20px;
-  }
 
   .menu-btn {
     display: block;
-    background: #007bff;
-    color: #fff;
-    font-size: 20px;
-    padding: 6px 12px;
+    background: transparent;
     border: none;
-    border-radius: 5px;
+    font-size: 26px;
     cursor: pointer;
   }
+
   nav {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+    position: fixed;
+    top: 0;
+    right: -260px;          /* hidden off-screen */
+    width: 260px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -10px 0 25px rgba(0,0,0,0.15);
+    transition: right 0.3s ease;
+    padding-top: 80px;
+    z-index: 1000;
   }
 
   nav.open {
-    max-height: 300px; /* enough space for links */
+    right: 0;               /* slides in */
   }
 
   nav ul {
     flex-direction: column;
     gap: 0;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 10px 0;
-    margin-top: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   }
 
   nav a {
-    padding: 12px 20px;
+    padding: 14px 24px;
     display: block;
-  }
-  /*nav {
-    display: none;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  nav.open {
-    display: block;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  nav a {
-    display: block;
-    padding: 8px 0;
     font-size: 16px;
-  }*/
+  }
 
   .few {
     flex-direction: column;
