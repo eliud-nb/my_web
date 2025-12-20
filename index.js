@@ -67,5 +67,11 @@ navLinks.forEach(link => {
   link.addEventListener("click", () => {
     nav.classList.remove("open");
   });
+
+/* Close menu when a link is clicked */
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
 });
 }
