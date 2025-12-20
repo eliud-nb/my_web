@@ -162,24 +162,25 @@ nav a.active {
   font-weight: 700;
   cursor: pointer;
 }
-
-/*Mobile style*/
+/* ----------------------------
+   Mobile Styles (max-width: 768px)
+---------------------------- */
 @media screen and (max-width: 768px) {
- header.site {
-  flex-wrap: wrap;
-  padding: 15px 20px;
- }
+  header.site {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
 
- .menu-btn {
-  display: black;
-  background: #007bff;
-  color: #fff;
-  font-size: 20px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
- }
+  .menu-btn {
+    display: block;
+    background: #007bff;
+    color: #fff;
+    font-size: 20px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
   nav {
     display: none;
@@ -225,7 +226,9 @@ nav a.active {
   }
 }
 
-/*Extra small devices (max-width: 480px)*/
+/* ----------------------------
+   Extra small devices (max-width: 480px)
+---------------------------- */
 @media screen and (max-width: 480px) {
   .few h1 {
     font-size: 28px;
