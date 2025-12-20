@@ -1,10 +1,18 @@
-
+// ---------------------------
+// Navigation Active Link
+// ---------------------------
 const navLinks = document.querySelectorAll("nav a");
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav");
 
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
+    // Active link highlight
     navLinks.forEach(l => l.classList.remove("active"));
     link.classList.add("active");
+
+    // Close mobile menu when link is clicked
+    nav.classList.remove("open");
   });
 });
 
@@ -30,16 +38,15 @@ if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = form.querySelector("input[name='name']");
-    const email = form.querySelector("input[name='email']");
-    const message = form.querySelector("textarea[name='message']");
+    const name = form.querySelector("input");
+    const email = form.querySelector("input[type='email']");
+    const message = form.querySelector("textarea");
 
     if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
       alert("Please fill out all fields.");
       return;
     }
 
-    // Very basic email format check
     if (!email.value.includes("@")) {
       alert("Please enter a valid email.");
       return;
@@ -51,27 +58,10 @@ if (form) {
 }
 
 // ---------------------------
-// OPTIONAL: Mobile Menu Toggle
-// (Add a hamburger button to HTML if needed)
+// Mobile Menu Toggle
 // ---------------------------
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
-const navLinks = document.querySelectorAll("nav a");
-
-menuBtn.addEventListener("click", () => {
-  nav.classList.toggle("open");
-});
-
-/* Close menu when a link is clicked */
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
+if (menuBtn) {
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("open");
   });
-
-/* Close menu when a link is clicked */
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-  });
-});
 }
