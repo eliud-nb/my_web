@@ -162,3 +162,9 @@ nav a.active {
   font-weight: 700;
   cursor: pointer;
 }
+
+/*Mobile style*/
+@media screen and (max-width: 768px) {
+ header.site{
+  flex-wrap: wrap;
+  padding: 15px 20px;
