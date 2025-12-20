@@ -1,18 +1,12 @@
 // ---------------------------
-// Navigation Active Link
+// Active Link Highlight
 // ---------------------------
 const navLinks = document.querySelectorAll("nav a");
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
 
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
-    // Active link highlight
     navLinks.forEach(l => l.classList.remove("active"));
     link.classList.add("active");
-
-    // Close mobile menu when link is clicked
-    nav.classList.remove("open");
   });
 });
 
@@ -30,38 +24,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ---------------------------
-// Contact Form Validation
+// Mobile Menu Toggle (SLIDE FROM RIGHT)
 // ---------------------------
-const form = document.querySelector(".contact form");
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav");
 
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
 
-    const name = form.querySelector("input");
-    const email = form.querySelector("input[type='email']");
-    const message = form.querySelector("textarea");
-
-    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
-      alert("Please fill out all fields.");
-      return;
-    }
-
-    if (!email.value.includes("@")) {
-      alert("Please enter a valid email.");
-      return;
-    }
-
-    alert("Message sent! (This is a demo)");
-    form.reset();
+/* Close menu when a link is clicked */
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
   });
-}
-
-// ---------------------------
-// Mobile Menu Toggle
-// ---------------------------
-if (menuBtn) {
-  menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
-}
+});
